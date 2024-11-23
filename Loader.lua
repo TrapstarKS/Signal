@@ -5,7 +5,8 @@ local Games = {
     ["648454481"] = "GrandPieceOnline",
     ["5638211721"] = "AnimeRoyale",
     ["5578556129"] = "AnimeVanguards",
-    ["1359573625"] = "Deepwoken"
+    ["1359573625"] = "Deepwoken",
+    ["1016936714"] = "YBA",
 }
 
 local function LoadGame(GameId)
