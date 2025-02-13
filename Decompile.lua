@@ -33,7 +33,7 @@ local oldconfig = `{getgenv().HideUpvalues or false}{getgenv().HideFunctionsName
 local function decompile(s)
 	if typeof(s) ~= "Instance" then return `-- Failed to decompile, error:\n\n--[[\nexpected Instance, got {typeof(s)}\n--]]` end
 
-	if not isViableDecompileScript(s) then return `-- Failed to decompile script, error:\n\n--[[\n{scriptInstance} is not a viable script to decompile\n--]]` end
+	if not isViableDecompileScript(s) then return `-- Failed to decompile script, error:\n\n--[[\n{s} is not a viable script to decompile\n--]]` end
 
 	local success, bytecode = pcall(getscriptbytecode, s)
 	if not success then return `-- Failed to get script bytecode, error:\n\n--[[\n{bytecode}\n--]]` end
