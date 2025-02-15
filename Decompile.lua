@@ -1,6 +1,7 @@
 assert(getscriptbytecode, "Your exploit does not support getscriptbytecode")
 assert(request, "Your exploit does not support request")
-local HttpService = game:GetService("HttpService")
+local cloneref = cloneref or function(...) return ... end
+local HttpService = cloneref(game:GetService("HttpService"))
 
 -- This is needed to work in some exploits without base64 encode (e.g. Delta)
 local b = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
