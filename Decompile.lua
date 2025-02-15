@@ -39,7 +39,7 @@ local function decompile(s)
 	if not success then return `-- Failed to get script bytecode, error:\n\n--[[\n{bytecode}\n--]]` end
 
 	local time_elapsed = tick() - last_call
-	if time_elapsed <= 0.5 then task.wait(0.5 - time_elapsed) end
+	if time_elapsed <= 0.1 then task.wait(0.1 - time_elapsed) end
 	local hd = `{getgenv().HideUpvalues or false}{getgenv().HideFunctionsNames or false}{getgenv().HideFunctionsLine or false}`
 	local response = request({
 		Url = "https://starhub.dev/api/v1/decompile",
