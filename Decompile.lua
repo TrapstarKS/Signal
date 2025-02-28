@@ -38,6 +38,7 @@ local function decompile(s)
 
 	local success, bytecode = pcall(getscriptbytecode, s)
 	if not success then return `-- Failed to get script bytecode, error:\n\n--[[\n{bytecode}\n--]]` end
+	if not bytecode then return `-- Failed to get script bytecode, error:\n\n--[[\nbytecode is nil\n--]]` end
 
 	local time_elapsed = tick() - last_call
 	--if time_elapsed <= 0.5 then task.wait(0.5 - time_elapsed) end
