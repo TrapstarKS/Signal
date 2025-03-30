@@ -58,6 +58,7 @@ local function decompile(s)
 		if not success then return `-- Failed to decompile script, error:\n\n--[[\n{r}\n--]]` end
 		if not r or not r.script then return `-- Failed to decompile script, error:\n\n--[[\n{r} is not a viable script to decompile\n--]]` end
 		s = r.script
+		if typeof(s) ~= "Instance" then return `-- Failed to decompile script, error:\n\n--[[\ngetfenv(func).script returned {typeof(s)}, expected Instance\n--]]` end
 	end
 
 	if (typeof_s ~= "string") and not isViableDecompileScript(s) then return `-- Failed to decompile script, error:\n\n--[[\n{s} is not a viable script to decompile\n--]]` end
